@@ -1,12 +1,14 @@
+//redux provider and store
+import { Provider } from "react-redux";
+import store from "./store";
 
 
-
-function App() {
+function AuthProvider() {
   return (
-    <div>
-      React App
-    </div>
+    <Provider store={store}>
+
+    </Provider>
   );
 }
 
-export default App;
+export default AuthProvider;
