@@ -1,6 +1,6 @@
 {
-  "name": "react-django-drf-auth",
-  "version": "0.1.0",
+  "name": "@codehub_technologies/react-django-drf-auth",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@redux-devtools/extension": "^3.3.0",
@@ -36,5 +36,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This is a react-django authentication system",
+  "main": "src/index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codehub-Technologies/react-django-drf-auth.git"
+  },
+  "keywords": [
+    "react",
+    "django",
+    "drf",
+    "authentication"
+  ],
+  "author": "Codehub Technologies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Codehub-Technologies/react-django-drf-auth/issues"
+  },
+  "homepage": "https://github.com/Codehub-Technologies/react-django-drf-auth#readme"
 }
