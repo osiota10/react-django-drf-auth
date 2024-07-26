@@ -150,17 +150,18 @@ export const checkAuthenticated = () => async dispatch => {
     }
 };
 
-export const login = (email, password) => async dispatch => {
+// Login users
+export const login = (formData, apiUrl) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
         }
     };
 
-    const body = JSON.stringify({ email, password });
-
+    const body = JSON.stringify(formData);
+    console.log(formData)
     try {
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/create/`, body, config);
+        const res = await axios.post(`${apiUrl}/auth/jwt/create/`, body, config);
 
         dispatch({
             type: LOGIN_SUCCESS,
@@ -172,7 +173,7 @@ export const login = (email, password) => async dispatch => {
         dispatch({
             type: LOGIN_FAIL,
             payload: err.response.data
-        })
+        });
     }
 };
 
