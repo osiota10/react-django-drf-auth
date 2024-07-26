@@ -5,9 +5,10 @@ import store from "./store";
 
 function AuthProvider() {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
 
-    </Provider>
+    // </Provider>
+    hello
   );
 }
 
