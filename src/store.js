@@ -1,5 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
+// import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './reducers';
+
+const { configureStore } = require('@reduxjs/toolkit');
 
 const initialState = {};
 
