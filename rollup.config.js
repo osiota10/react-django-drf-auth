@@ -41,9 +41,10 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 import json from '@rollup/plugin-json';
+import typescript from '@rollup/plugin-typescript';
 
 export default {
-    input: 'src/index.js',
+    input: 'src/index.ts', // Changed to .ts
     output: [
         {
             file: 'dist/index.cjs.js',
@@ -77,16 +78,18 @@ export default {
         'path',],
     plugins: [
         nodeResolve({
-            extensions: ['.js', '.jsx'], // Add .jsx extension here
-            preferBuiltins: false, // Set this to false to prefer local modules over built-in
+            extensions: ['.js', '.jsx', '.ts', '.tsx'], // Added .ts and .tsx
+            preferBuiltins: false,
         }),
+        typescript({ tsconfig: './tsconfig.json' }), // Added TypeScript plugin
         commonjs(),
         babel({
             exclude: 'node_modules/**',
             babelHelpers: 'bundled',
             presets: ['@babel/preset-env', '@babel/preset-react'],
+            extensions: ['.js', '.jsx', '.ts', '.tsx'], // Ensure Babel processes TS files too if needed after TS compilation
         }),
-        json(), // Add this line to handle JSON imports
+        json(),
         terser(),
     ],
 };

@@ -1,7 +1,9 @@
 node_modules/
 src/
+tsconfig.json
 .babelrc
-webpack.config.js
+webpack.config.cjs
+rollup.config.js
 .gitignore
 /test
-rollup.config.js
+dist/**/*.map
